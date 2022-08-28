@@ -14,35 +14,42 @@ array의 길이는 1 이상 100 이하입니다.array의 각 원소는 1 이상 
 commands의 길이는 1 이상 50 이하입니다.commands의 각 원소는 길이가 3 입니다.
 '''
 
+from tkinter import E
+
+
 array = [1, 5, 2, 6, 3, 7, 4]
 commands = [[2, 5, 3], [4, 4, 1], [1, 7, 3]]
 
 
-def solution(array, commands):
-    return list(map(lambda x: sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
+# def solution1(array, commands):
+#     return list(map(lambda x: sorted(array[x[0]-1:x[1]])[x[2]-1], commands))
 
-def solution(array, commands):
-    answer = []
-    for command in commands:
-        i, j, k = command
-        answer.append(list(sorted(array[i-1:j]))[k-1])
-    return answer
+# print(solution1())
 
-
-def solution(array, commands):
-    result = []
-    for command in commands:
-        i, j, k = command[0], command[1], command[2]
-        subarray = sorted(array[i-1:j])
-        result.append(subarray[k-1])
-    return result
+# def solution2(array, commands):
+#     answer = []
+#     for command in commands:
+#         i, j, k = command
+#         answer.append(list(sorted(array[i-1:j]))[k-1])
+#     return answer
 
 
-def solution(array, commands):
-    answer = []
-    for it in commands:
-        [i, j, k] = it
-        temp = array[i-1:j]
-        temp.sort()
-        answer.append(temp[k-1])
-    return answer
+# def solution3(array, commands):
+#     result = []
+#     for command in commands:
+#         i, j, k = command[0], command[1], command[2]
+#         subarray = sorted(array[i-1:j])
+#         result.append(subarray[k-1])
+#     return result
+
+
+# def solution4(array, commands):
+#     answer = []
+#     for it in commands:
+#         [i, j, k] = it
+#         temp = array[i-1:j]
+#         temp.sort()
+#         answer.append(temp[k-1])
+#     return answer
+
+
